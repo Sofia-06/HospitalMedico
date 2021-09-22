@@ -15,6 +15,28 @@
       return $consulta;
     }
     
-    
+    public function PacienteExis($DPI)
+    {
+      $query="SELECT * FROM `clientes` WHERE `DPI`='$DPI';";
+      $resultado=$this->con->query($query);
+      $this->con->close();
+      return $resultado;
+    }
+
+    public function VerSalas()
+    {
+      $query="SELECT * FROM `salas`;";
+      $resultado=$this->con->query($query);
+      $this->con->close();
+      return $resultado;
+    }
+    public function VerTurnos($DPI)
+    {
+
+      $query="SELECT * FROM `clientes` WHERE `DPI`='$DPI';";
+      $resultado=$this->con->query($query);
+      $this->con->close();
+      return $resultado;
+    }
   }
 ?>

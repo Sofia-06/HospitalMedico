@@ -6,27 +6,20 @@
     <thead>
       <tr>
           <th>Número de sala</th>
-          <th>Especialidad</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
           <th>Disponibilidad</th>
       </tr>
     </thead>
-
+      {foreach from=$sal item=$sa}
+        <tr>
+        <td>{$sa['idSalas']}</td>
+          <td>{$sa['Nombre']}</td>
+          <td>{$sa['Descripcion']}</td>
+          <td>{$sa['Estado']}</td>
+        </tr>
+        {/foreach}
     <tbody>
-      <tr>
-        <td>Alvin</td>
-        <td>Eclair</td>
-        <td>$0.87</td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
-      </tr>
     </tbody>
   </table>
     </form>

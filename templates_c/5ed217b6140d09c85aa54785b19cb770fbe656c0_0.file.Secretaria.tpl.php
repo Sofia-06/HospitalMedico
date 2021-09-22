@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-18 03:53:08
+/* Smarty version 3.1.39, created on 2021-09-22 05:30:20
   from 'C:\xamppp\htdocs\HospitalMedico\HospitalMedico\templates\Secretaria.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61454684f11257_96554539',
+  'unifunc' => 'content_614aa34c0e3c15_46164330',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5ed217b6140d09c85aa54785b19cb770fbe656c0' => 
     array (
       0 => 'C:\\xamppp\\htdocs\\HospitalMedico\\HospitalMedico\\templates\\Secretaria.tpl',
-      1 => 1631899196,
+      1 => 1632281344,
       2 => 'file',
     ),
   ),
@@ -22,17 +22,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Secretaria/PacienteExistente.tpl' => 1,
     'file:Secretaria/PacienteNuevo.tpl' => 1,
     'file:Secretaria/Salas.tpl' => 1,
+    'file:Secretaria/Turnos.tpl' => 1,
     'file:Cabeceras/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_61454684f11257_96554539 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614aa34c0e3c15_46164330 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <nav>
         <div class="nav-wrapper #d1c4e9 deep-purple lighten-4">
           <a href="" class="brand-logo">Hospital Portland</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="">Salir</a></li>
+            <li><a href="http://localhost/HospitalMedico/HospitalMedico/">Salir</a></li>
           </ul>
         </div>
       </nav>
@@ -56,12 +57,23 @@ $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cach
                 <?php } elseif ($_smarty_tpl->tpl_vars['rol']->value == 'salas') {?>
                     <?php $_smarty_tpl->_subTemplateRender('file:Secretaria/Salas.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+                <?php } elseif ($_smarty_tpl->tpl_vars['rol']->value == 'Turnos') {?>
+                    <?php $_smarty_tpl->_subTemplateRender('file:Secretaria/Turnos.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>    
                 <?php }?>
                 <?php } else { ?>
                  <h1>Bienvenida Secretaria</h1>
                   <br/>
                   <br/>
                   <br/>
+
+                <div class ="row">
+                  <div class="input field col s12">
+                    <a href="?controller=Secre&method=Turnos" class="waves-effect waves-light btn-large"><i class="material-icons left">account_box</i>Asignación de Turnos</a>
+                    </button>
+                  </div>
+                </div>
+
                 <div class ="row">
                     <div class="input field col s12">
                     <a href="?controller=Secre&method=PacienteE" class="waves-effect waves-light btn-large"><i class="material-icons left">account_circle</i>Paciente ya existente</a>
@@ -69,16 +81,14 @@ $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cach
                     </div>
                     <br/>
                 <br/>
-                <br/>
-                <br/>
                 </div> 
                 <div class ="row">
                     <div class="input field col s12">
                     <a href="?controller=Secre&method=PacienteN" class="waves-effect waves-light btn-large"><i class="material-icons left">account_box</i>Paciente Nuevo</a>
                     </button>
                     </div>
-                </div> 
-                <br/>
+                </div>  
+                
                 <div class ="row">
                     <div class="input field col s12">
                     <a href="?controller=Secre&method=Salas" class="waves-effect waves-light btn-large"><i class="material-icons left">account_box</i>Ver Salas</a>

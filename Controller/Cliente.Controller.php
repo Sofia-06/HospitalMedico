@@ -38,12 +38,16 @@
 
         public function AgendCovid()
         {
-            $nomb=$_POST['nom'];
-            $ape=$_POST['apelli'];
-            $tele=$_POST['tel'];
-            $fec=$_POST['Fecha'];
+            if(isset($_POST['nom']))
+            {
+                $nomb=$_POST['nom'];
+                $ape=$_POST['apelli'];
+                $tele=$_POST['tel'];
+                $fec=$_POST['Fecha'];
 
-            $this->cli->ACovid($nomb,$ape,$tele,$fec);
+                $this->cli->ACovid($nomb,$ape,$tele,$fec);
+            }
+            
 
             $this->smarty->assign('rol','agendCovid');
             $this->smarty->assign('title','Agendar Prueba COVID-19');

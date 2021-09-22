@@ -50,7 +50,8 @@
                 $this->smarty->assign('title', 'Home');
                 $this->smarty->display('Home.tpl');
            }
-       }
+        }
+       
     }
     //usado 
 ?>
